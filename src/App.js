@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Mtable from "./Components/Datatable/Mtable";
+import Sidenav from "./Components/NestedMenu/Sidenav";
+import Homepage from "./Components/Homepage";
+import DataComponent from "./Components/Charts/Fetch"
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Homepage />, // Render Homepage component
+    children: [
+      { path: '/table', element: <Mtable /> },
+      { path: '/nestedmenu', element: <Sidenav /> },
+      { path: '/recharts', element: <DataComponent />},
+    ]}])
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <RouterProvider router={router} />
+);
 }
 
 export default App;
