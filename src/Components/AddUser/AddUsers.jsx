@@ -188,13 +188,13 @@ export default function Addtable() {
               onClose={handleCloseModal}
               style={{
                 position: "fixed",
-                top: "40%",
+                top: "37%",
                 left: "40%",
                 transform: "translate(-50%, -50%)",
               }}
               hideBackdrop
             >
-              <form
+              <div
                 style={{
                   display: "grid",
                   gap: "15px",
@@ -374,7 +374,7 @@ export default function Addtable() {
                     Cancel
                   </Button>
                 </div>
-              </form>
+              </div>
             </Modal>
           )}
           <Dialog

@@ -5,6 +5,7 @@ import Homepage from "./Components/Homepage";
 import DataComponent from "./Components/Charts/Fetch";
 import SearchTable from "./Components/SearchTable/SearchTable"
 import Addtable from "./Components/AddUser/AddUsers"
+import Forms from "./Components/Forms/Forms";
 const router = createBrowserRouter([
   {
     path: '/',
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
       { path: '/nestedmenu', element: <Sidenav /> },
       { path: '/recharts', element: <DataComponent />},
       { path: '/stable', element: <SearchTable />},
-      { path: '/add', element:<Addtable />}
+      { path: '/add', element:<Addtable />},
+      { path: '/form', element:<Forms/>}
     ]}])
 
 function App() {
