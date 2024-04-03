@@ -22,6 +22,7 @@ export default function Homepage() {
         <Link to="/stable" className="button-link">Search Table</Link>
         <Link to="/add" className="button-link">Add User</Link>
         <Link to="/form" className="button-link">Forms</Link>
+        <Link to="/json" className="button-link">Table Json</Link>
     </Box>
     <Box margin="auto" marginTop={5} sx={{width:"900px",height:"200px"}}>
       <Outlet/>

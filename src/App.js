@@ -6,6 +6,7 @@ import DataComponent from "./Components/Charts/Fetch";
 import SearchTable from "./Components/SearchTable/SearchTable"
 import Addtable from "./Components/AddUser/AddUsers"
 import Forms from "./Components/Forms/Forms";
+import Tab from "./Components/TableJson/Table";
 const router = createBrowserRouter([
   {
     path: '/',
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
       { path: '/recharts', element: <DataComponent />},
       { path: '/stable', element: <SearchTable />},
       { path: '/add', element:<Addtable />},
-      { path: '/form', element:<Forms/>}
+      { path: '/form', element:<Forms/>},
+      { path: '/json', element: <Tab/>}
     ]}])
 
 function App() {
