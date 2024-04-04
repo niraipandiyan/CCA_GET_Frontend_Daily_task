@@ -22,6 +22,14 @@ const StyledTableContainer = styled(TableContainer)({
   border: "0.5px solid #DDDDDD",
 });
 
+const FixedTableHeader = styled(TableHead)({
+  position: "sticky",
+  top: 0,
+  zIndex: 100,
+  backgroundColor: "#BED7DC",
+});
+
+
 const StyledTableCell = styled(TableCell)({
   backgroundColor: "#BED7DC", // Table header background color
   fontWeight: "bold",
@@ -45,9 +53,9 @@ const StyledTableRow = styled(TableRow)({
 });
 
 export default function Tab() {
-  const groupedData = details.reduce((acc, curr) => {
-    if (!acc[curr.instance_id]) {
-      acc[curr.instance_id] = {
+  const groupedData = details.reduce((res, curr) => {
+    if (!res[curr.instance_id]) {
+      res[curr.instance_id] = {
         instance_id: curr.instance_id,
         region: curr.region,
         instance_name: curr.instance_name,
@@ -56,8 +64,8 @@ export default function Tab() {
         last_activity_time: curr.last_activity_time,
       };
     }
-    acc[curr.instance_id][curr.metric_type] = curr.average_utilization;
-    return acc;
+    res[curr.instance_id][curr.metric_type] = curr.average_utilization;
+    return res;
   }, {});
 
   const rowData = Object.values(groupedData);
@@ -68,7 +76,7 @@ export default function Tab() {
         <div>
           <StyledTableContainer style={{ margin: "auto" }} component={Paper}>
             <Table>
-              <TableHead>
+              <FixedTableHeader>
                 <TableRow>
                   <StyledTableCell>Region</StyledTableCell>
                   <StyledTableCell>Instance Name</StyledTableCell>
@@ -80,7 +88,7 @@ export default function Tab() {
                   <StyledTableCell>Memory</StyledTableCell>
                   <StyledTableCell>Last Activity Time</StyledTableCell>
                 </TableRow>
-              </TableHead>
+              </FixedTableHeader>
               <TableBody>
                 {rowData.map((row) => (
                   <StyledTableRow
