@@ -8,6 +8,7 @@ import Addtable from "./Components/AddUser/AddUsers"
 import Forms from "./Components/Forms/Forms";
 import Tab from "./Components/TableJson/Table";
 import CardComp from "./Components/Card/Card";
+import Slider from "./Components/Slider/Slider";
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
       { path: '/add', element:<Addtable />},
       { path: '/form', element:<Forms/>},
       { path: '/json', element: <Tab/>},
-      { path: '/cards', element: <CardComp />}
+      { path: '/cards', element: <CardComp />},
+      { path: '/slider', element: <Slider />}
     ]}])
 
 function App() {
